@@ -1,4 +1,4 @@
-// ESP-Alarm v0.1.0
+// ESP-Alarm v0.1.1
 // RX - Приёмник
 
 // Подключение библиотек
@@ -23,8 +23,8 @@ StructMessage myData;
 // Функция тревоги
 void alarm()
 {
-    // мигнуть 3 раза, 700мс вкл, 400мс выкл
-    led.blink(3, 700, 400);
+    // мигнуть 3 раза, 250 мс вкл, 200 мс выкл
+    led.blink(3, 250, 200);
 }
 
 void setupWiFi()
@@ -47,8 +47,6 @@ void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len)
     {
         if (msg->myButtonClicked)
             alarm();
-        if (msg->buttonPrev)
-            triggerSlideChange(PREV_PIN);
     }
     else
     {

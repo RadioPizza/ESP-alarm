@@ -1,4 +1,4 @@
-// ESP-Alarm v0.1.0
+// ESP-Alarm v0.1.1
 // TX - Передатчик
 
 // Подключение библиотек
@@ -45,7 +45,7 @@ void setup()
 void loop()
 {
     myButton.tick();
-    myData.myButtonClicked = buttonNext.click();
+    myData.myButtonClicked = myButton.click();
     if (myData.myButtonClicked)
     {
         Serial.println("Button was clicked");
